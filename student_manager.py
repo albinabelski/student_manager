@@ -20,15 +20,18 @@ students = {
 }
 # Create a menu:
 while True:
-    print("=" * 5,  "Student Management",  "=" * 5)
-    print()
-    print("1. Display students")
-    print("2. Add student")
-    print("3. Search student")
-    print("4. Update grade")
-    print("5. Delete student")
-    print("6. Calculate average grade")
-    print("7. Exit")
+    print(
+        "=" * 7 + " " + "Student Management" + " " + "=" * 7,
+        "",
+        "1. Display students",
+        "2. Add student",
+        "3. Search student",
+        "4. Update grade",
+        "5. Delete student",
+        "6. Calculate average grade",
+        "7. Exit",
+        sep="\n"
+    )
     
     choice = input("Choose an option: ")
     
@@ -42,7 +45,7 @@ while True:
             print()
 
 # 2. Add student
-    if choice == "2":
+    elif choice == "2":
         student_id = int(input("Enter student's ID: "))
         name = input("Enter name: ")
         age = int(input("Enter age: "))
@@ -58,7 +61,7 @@ while True:
         print()
         
 # 3. Search student
-    if choice == "3":
+    elif choice == "3":
         student_id = int(input("Enter student's ID to search: "))
             
         if student_id in students:
@@ -76,7 +79,7 @@ while True:
             print()
 
 # 4. Update grade    
-    if choice == "4":
+    elif choice == "4":
         student_id = int(input("Enter the student's ID to update their grade: "))
         if student_id in students:
             new_grade = int(input("Enter the new grade: "))
@@ -86,8 +89,8 @@ while True:
             print("Student not found")
             print()
 
-# 5. Delet student
-    if choice == "5":
+# 5. Delete student
+    elif choice == "5":
         student_id = int(input("Enter the student's ID to remove: "))
         if student_id in students:
             del students[student_id]
@@ -96,7 +99,7 @@ while True:
             print("Student not found")
             print()
 # 6. Calculate average
-    if choice == "6":
+    elif choice == "6":
         # average = sum of all grades / number of students
         total = 0
         for student in students.values():
@@ -107,6 +110,6 @@ while True:
         print()
         
 # 7. Exit
-    if choice == "7":
+    elif choice == "7":
         print("Ciao!")
-    break
+        break
